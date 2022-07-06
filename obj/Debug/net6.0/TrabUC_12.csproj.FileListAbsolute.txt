@@ -1,0 +1,15 @@
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\bin\Debug\net6.0\TrabUC_12.exe
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\bin\Debug\net6.0\TrabUC_12.deps.json
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\bin\Debug\net6.0\TrabUC_12.runtimeconfig.json
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\bin\Debug\net6.0\TrabUC_12.dll
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\bin\Debug\net6.0\TrabUC_12.pdb
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\obj\Debug\net6.0\TrabUC_12.csproj.AssemblyReference.cache
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\obj\Debug\net6.0\TrabUC_12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\obj\Debug\net6.0\TrabUC_12.AssemblyInfoInputs.cache
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\obj\Debug\net6.0\TrabUC_12.AssemblyInfo.cs
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\obj\Debug\net6.0\TrabUC_12.csproj.CoreCompileInputs.cache
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\obj\Debug\net6.0\TrabUC_12.dll
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\obj\Debug\net6.0\refint\TrabUC_12.dll
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\obj\Debug\net6.0\TrabUC_12.pdb
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\obj\Debug\net6.0\TrabUC_12.genruntimeconfig.cache
+C:\Users\eletr\Desktop\UC-12\TrabUC_12\obj\Debug\net6.0\ref\TrabUC_12.dll
