@@ -7,9 +7,11 @@ namespace TrabUC_12
 {
     public abstract class Pessoa
     {
+        //Atributos da classe
         public string nome { get; set; }
-        public string endereco { get; set; }
-        public bool enderecoComercial { get; set; }
-        public void PagarImposto() {}
+        public Endereco endereco { get; set; }  
+
+        //Métodos da classe
+        public abstract void PagarImposto(float rendimento);
     }
 }
