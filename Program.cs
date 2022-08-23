@@ -4,13 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Endereco end = new Endereco();
-            end.logradouro = "Brigadeiro Augusto Carvalho Pereira";
-            end.numero = 380;
-            end.complemento = "Bloco-F";
-            end.CEP = "98037-000";
-            end.enderecoComercial = false;
-
+            /*
             PessoaFisica pf = new PessoaFisica();
             pf.endereco = end;
             pf.nome = "João da Silva Antunes";
@@ -49,6 +43,29 @@
             }
 
             Console.WriteLine("***************************************************************");
+            }
+         */
+
+            PessoaJuridica pj = new PessoaJuridica ();
+            Endereco end = new Endereco();
+            end.logradouro = "Brigadeiro Augusto Carvalho Pereira";
+            end.numero = 380;
+            end.complemento = "Bloco-F";
+            end.CEP = "98037-000";
+            end.enderecoComercial = true;
+
+            pj.endereco = end;
+            pj.cnpj = "12345678990001";
+            pj.RazaoSocial = "Pessoa Juridica";
+
+           if(pj.ValidarCNPJ(pj.cnpj))
+           {
+            Console.WriteLine("cnpj válido");
+           }
+            else
+            {
+               Console.WriteLine("cnpj invalido"); 
+            }
         }
     }
 }
