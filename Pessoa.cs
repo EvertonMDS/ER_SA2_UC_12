@@ -12,6 +12,6 @@ namespace TrabUC_12
         public Endereco endereco { get; set; }  
 
         //Métodos da classe
-        public abstract void PagarImposto(float rendimento);
+        public abstract float PagarImposto(float rendimento);
     }
 }

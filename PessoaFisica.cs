@@ -9,8 +9,28 @@ namespace TrabUC_12
     {
 
         public string cpf { get; set; }
+        public float salario {get; set;}
         public DateTime dataNascimento { get; set; }
-        public override void PagarImposto(float rendimento) { }
+        
+        public override float PagarImposto(float salario){
+
+          if  (salario <= 1500)
+          {
+            return 0;
+          }
+          else if  (salario >1500 && salario <= 5000)
+          {
+            return salario *3 / 100;
+          }
+          else if  (salario >5000)
+          {
+            return salario *5 / 100;
+          }
+          else
+          {
+            return 0;
+          }
+        }
                 
     //boleano para validar a idade que terá o retorno verdadeiro ou falso
         public bool ValidarDataNascimento(DateTime dataNascimento)

@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
+            List<PessoaFisica> listaPf = new List<PessoaFisica>();
 
+
+            Console.ForegroundColor = ConsoleColor.Green;
 
             static void BarraCarregamento(string texto)
             {
@@ -36,17 +39,23 @@
             //BarraCarregamento ("Start Sistema....")
 
             string? opcao;
-
             do
             {
                 Console.WriteLine(@$"
 =================================================== 
 !     Escolha uma das opções abaixo + ENTER:      !          
 =================================================== 
-!              1 - Pessoa Física                  !
-!              2 - Pessoa Jurídica                !
+!              PESSOA FÍSICA                      !
+!       1 - Cadastrar pessoa física               !
+!       2 - Listar Pessoa Física                  !
+!       3 - Remover Pessoa Física                 !
 !                                                 !
-!              0 - Sair                           !
+!                PESSOA JURÍDICA                  !
+!       1 - Cadastrar Pessoa Jurídica             !
+!       2 - Listar Pessoa Jurídica                !
+!       3 - Remover Pessoa Jurídica               !
+!                                                 !
+!                0 - Sair                         !
 !                                                 !
 ===================================================               
 ");
@@ -56,47 +65,107 @@
                 switch (opcao)
                 {
                     case "1":
+                        // Cadastrar pessoa física        
                         Endereco endPf = new Endereco();
+                        Console.WriteLine("Digite seu Logradouro");
+                        endPf.logradouro = Console.ReadLine();
 
-                        endPf.logradouro = "Rua Brigadeiro Marco Antonio Costa";
-                        endPf.numero = 230;
-                        endPf.complemento = "Apt- Bloco - 2B";
-                        endPf.enderecoComercial = false;
+                        Console.WriteLine("Digite o número da sua residência");
+                        endPf.numero = int.Parse(Console.ReadLine());
 
-                        PessoaFisica Creison = new PessoaFisica();
-                        Creison.cpf = "651683864546";
-                        Creison.dataNascimento = new DateTime(1984, 08, 21);
-                        Creison.endereco = endPf;
-                        Creison.nome = "Creison Tabajara";
+                        Console.WriteLine("Digite o complemento da sua residência, se necessário, senão pressione ENTER para pular");
+                        endPf.complemento = Console.ReadLine();
 
-                        Console.WriteLine("Dados da Pessoa Física:");
-                        Console.WriteLine
-                        (@$"Nome: {Creison.nome}
-CPF: {Creison.cpf} 
-Nascido em {Creison.dataNascimento.ToString("dd/MM/yyyy")}
-Endereço: {endPf.logradouro}, {endPf.numero}");
+                        Console.WriteLine("Este endereço é comercial? (S = Sim ou N = Não)");
+                        string endComercial = Console.ReadLine().ToUpper();
 
-                        Console.WriteLine();
+                        if (endComercial == "S")
+                        {
+                            endPf.enderecoComercial = true;
+                        }
+                        else
+                        {
+                            endPf.enderecoComercial = false;
+                        }
+
+
+                        PessoaFisica pf = new PessoaFisica();
+                        pf.endereco = endPf;
+
+                        Console.WriteLine("Digite seu CPF (Somente números):");
+                        pf.cpf = Console.ReadLine();
+
+                        Console.WriteLine("Digite seu nome:");
+                        pf.nome = Console.ReadLine();
+
+                        Console.WriteLine("Digite o valor do seu salário:");
+                        pf.salario = float.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Digite sua data de aniversário [AA, MM, DD]");
+                        pf.dataNascimento = DateTime.Parse(Console.ReadLine());
+                        bool idadeValida = pf.ValidarDataNascimento(pf.dataNascimento);
+
+                        if (idadeValida == true)
+                        {
+                            Console.WriteLine("cadastro aprovado");
+                            listaPf.Add(pf);
+                            Console.WriteLine(pf.PagarImposto(pf.salario));
+                        }
+
                         break;
+
                     case "2":
-                        Endereco endPj = new Endereco();
-
-                        endPj.logradouro = "Rua Niterói";
-                        endPj.numero = 180;
-                        endPj.complemento = "Escola SENAI";
-                        endPj.enderecoComercial = true;
-
-                        PessoaJuridica pj = new PessoaJuridica();
-                        pj.cnpj = "0104115487";
-                        pj.endereco = endPj;
-                        pj.RazaoSocial = "Pessoa Jurídica";
-                        pj.nome = "SENAI - Full Stack";
-
-                        Console.WriteLine("Dados da Pessoa Jurídica:");
-                        Console.WriteLine(@$"CNPJ: {pj.cnpj}, 
-Nome Fantasia: {pj.nome}, 
-Endereço da Empresa: {endPj.logradouro}, {endPj.numero}");
+                        // Listar pessoa física   
+                        foreach (var cadaItem in listaPf)
+                        {
+                            Console.WriteLine($" {cadaItem.nome}, {cadaItem.cpf}");
+                        }
                         break;
+
+                    case "3":
+                        // Remover pessoa física   
+                        Console.WriteLine("Digite o CPF do inadinplente que deseja remover");
+                        string cpfProcurado = Console.ReadLine();
+                        PessoaFisica pessoaEncontrada = listaPf.Find(cadaItem => cadaItem.cpf == cpfProcurado);
+
+                        if (pessoaEncontrada != null)
+                        {
+                            listaPf.Remove(pessoaEncontrada);
+                            Console.WriteLine("Meliante foi removido");
+                        }
+                        else
+                        {
+                            Console.WriteLine("cpf não encontrado");
+                        }
+
+                        break;
+
+                    case "4":
+                        // Cadastrar pessoa jurídica        
+
+
+
+
+                        break;
+
+                    case "5":
+                        // Listar pessoa jurídica   
+
+
+
+
+                        break;
+
+                    case "6":
+                        // Remover pessoa jurídica   
+
+
+
+
+                        break;
+
+
+
 
                     case "0":
                         Console.WriteLine("Obrigado por utilizar o nosso sistema.");
